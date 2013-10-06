@@ -5,7 +5,7 @@
 class monetary_error : public std::logic_error {
 public:
    // Constructor
-   monetary_error() : std::logic_error("Fel:") { };
+   monetary_error(const string msg) : std::logic_error(msg) {};
 };
  
 #endif
