@@ -1,10 +1,11 @@
 #include <iostream>
 #include <string>
  
-
+using namespace std;
  
-int main(void)
-{
+int main(void){
+try
+ { 
   money m1;
   money m2(100);
   money m3(10, 50);
@@ -36,6 +37,7 @@ int main(void)
   m4 = m6;
   m4.print(cout);
   return 0;
+ }
 }
 
 
