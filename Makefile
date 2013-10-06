@@ -4,12 +4,14 @@ hello: Hello_world.cc
 clean:
 	@rm -f hello a.out *~
 	
-	
-list.o: list.h list.cc 
-	g++ -c list.cc
-	
-lab1-5.o: lab1-5.cc
-	g++ -c lab1-5.cc
+monetary_error.o: monetary_error.h monetary.h monetary.cc
+	g++ -c monetary_error.cc
 
-main: lab1-5.o list.o
+monetary.o: monetary.h monetary.cc 
+	g++ -c monetary.cc
+	
+lab2.o: lab2.cc
+	g++ -c lab2.cc
+
+main: .o list.o
 	g++ -o main lab1-5.o list.o
