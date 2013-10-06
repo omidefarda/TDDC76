@@ -36,6 +36,7 @@ try
   m1.print(cout);
   m4 = m6;
   m4.print(cout);
+  catch (monetary_error &e)
   return 0;
  }
 }
