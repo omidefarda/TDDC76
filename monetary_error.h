@@ -5,7 +5,7 @@
 using namespace std;
 
 class monetary_error : public std::logic_error {
-public:
+
    // Constructor
    monetary_error(const string& msg) :public std::logic_error(msg) {};
 };
