@@ -5,8 +5,8 @@ clean:
 	@rm -f hello a.out *~
 	
 
-monetary.o:  monetary.cc 
-	g++ -c monetary.cc
+Monetary.o:  Monetary.cc 
+	g++ -c Monetary.cc
 	
 monetary_error.o: monetary_error.h monetary.h monetary.cc
 	g++ -c monetary_error.cc
