@@ -2,7 +2,7 @@
 #include "Monetary.h"
 #include <string>
 #include <iostream>
-
+using namespace std;
 //print osv
 void money::print(ostream &out)
 {
