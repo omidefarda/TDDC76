@@ -8,7 +8,7 @@ clean:
 Monetary.o:  Monetary.cc 
 	g++ -c Monetary.cc
 	
-monetary_error.o: monetary_error.h monetary.h monetary.cc
+monetary_error.o: monetary_error.cc
 	g++ -c monetary_error.cc
 	
 lab2.o: lab2.cc
