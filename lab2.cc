@@ -38,7 +38,7 @@ try
   m4 = m6;
   m4.print(cout);
   }
-  catch (monetary_error &e) {cout << e.what << endl;}
+  catch (monetary_error &e) {cout << e.what() << endl;}
   
   return 0;
  
