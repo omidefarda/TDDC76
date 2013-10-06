@@ -4,10 +4,10 @@
 #include <string>
 using namespace std;
 
-class monetary_error : public std::logic_error {
-
+class monetary_error : public logic_error {
+public:
    // Constructor
-   monetary_error(const string& msg) :public std::logic_error(msg) {};
+   monetary_error(const string& msg) : public logic_error(msg) {};
 };
  
 #endif
