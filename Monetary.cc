@@ -41,4 +41,4 @@ money& money::operator=(money& tilldelare)
     }
 }
 //Jämförelse
-//bool operator=(const money&, const money&);
+bool operator=(const money&, const money&);
