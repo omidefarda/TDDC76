@@ -14,5 +14,5 @@ monetary_error.o: monetary_error.cc
 lab2.o: lab2.cc
 	g++ -c lab2.cc
 
-lab2: lab2.o monetary.o monetary_error.o
-	g++ -o lab2.o monetary.o monetary_error.o
+lab2: lab2.o Monetary.o monetary_error.o
+	g++ -o lab2.o Monetary.o monetary_error.o
