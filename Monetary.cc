@@ -19,7 +19,7 @@ money& money::operator+(money& adderare)
     }
   else
     {
-      throw ;
+      throw monetary_error ("olika valuta");
     }
 }
 money& money::operator=(money& tilldelare)
@@ -37,7 +37,7 @@ money& money::operator=(money& tilldelare)
     }      
   else
     {
-      cout<< "HEJ"<< endl;
+      throw monetary_error ("olika valuta");
     }
 }
 //Jämförelse
