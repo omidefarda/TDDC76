@@ -38,8 +38,10 @@ try
   m4 = m6;
   m4.print(cout);
   }
-  catch (cout << monetary_error& e what()<<);
-  
+  catch (monetary_error& e);
+   {
+     cout << e.what << endl;
+   }
   return 0;
  
 }
