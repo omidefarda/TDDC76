@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
- 
+#include "Monetary.h"
+#include "monetary_error.h"
 using namespace std;
  
 int main(void){
@@ -36,9 +37,11 @@ try
   m1.print(cout);
   m4 = m6;
   m4.print(cout);
-  catch (monetary_error& e)
+  }
+  catch (monetary_error& e);
+  
   return 0;
- }
+ 
 }
 
 
