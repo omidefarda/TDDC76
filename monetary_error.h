@@ -2,6 +2,7 @@
 #define MONETARY_ERROR_H
 #include <stdexcept>
 #include <string>
+using namespace std;
 
 class monetary_error : public std::logic_error {
 public:
