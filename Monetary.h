@@ -1,14 +1,24 @@
 #ifndef MONETARY_H
 #define MONETARY_H
-#include "monetary_error.h"
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <stdexcept>
 
 using namespace std;
 
 namespace monetary
 {
+  class monetary_error : public logic_error 
+  {
+  public:
+    explicit monetary_error(const string& what_arg) noexcept
+      : logic_error{what_arg}{}
+    
+    explicit monetary_error(const char* what_arg) noexcept
+      : logic_error{what_arg} {}
+  };
+  
   class Money
   {
   private:
@@ -41,41 +51,36 @@ namespace monetary
   
     // Koppieringskonstruktor
     Money(const Money&)=default;
-    //money(const char*);
     ~Money() = default;
-    Money& operator=(const char*);
   
     //Print x2
     void print(ostream &out);
     friend ostream& operator<<(ostream& out, const Money&);
 
     //Sammansättning
-    Money& operator+(Money&);
+    const Money& operator+(Money&);
     Money& operator=(Money&);
 
     //Jämförelse
-    //Vad menas med "Implementera < och == "direkt" och definiera de övriga i termer av dess"
-    //är money++/++money här nedanför "direkt" implementerade och hur skall man då definiera de överiga i dessa?
-    bool operator==(Money&);
-    bool operator<(Money&);
+    bool operator < (const Money&);
+    bool operator == (const Money&);
+    bool operator > (const Money&);
+    bool operator != (const Money&);
+    bool operator >= (const Money&);
+    bool operator <= (const Money&);
 
     //Stegning
     //++money
-    Money& operator++()
-      {
-	hundradelar=hundradelar+1;
-	return *this;
-      }
+    Money& operator++();
     //money++
-    Money operator++(int)
-    {
-      Money temp = *this;
-      hundradelar=hundradelar+1;
-      return temp;
-    }
+    const Money operator++(int);
+
+    //Medlemsfunktion, skall returnera valutaenhet
+    string currency();
   };
+
+
 
 }
 
 #endif
-
